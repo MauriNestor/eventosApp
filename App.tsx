@@ -1,13 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import Main from './src/Main';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <Image source={require('./assets/icon.png')} /> */}
-      <Text>Opejhjkkj sx to start mmmm on your mmm!</Text>
-      <StatusBar style="auto"/>
-    </View>
+    <Main />
   );
 }
 
