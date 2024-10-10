@@ -1,11 +1,33 @@
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 
 const WelcomeScreen = () => {
   return (
-    <SafeAreaView>
-      <Text>Welcome to my app!</Text>
+    <SafeAreaView style = {styles.container}>
+      <Text style = {styles.text}>
+        Welcome to my app!
+      <Text style = {styles.textoNegrita} > Welcome to my app!</Text>
+      </Text>
     </SafeAreaView>
   );
 }
 
 export default WelcomeScreen;
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#f0f0f0',
+    },
+    text: {
+      fontSize: 18,
+      fontWeight: '400',
+    },
+    textoNegrita: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: 'red',
+        textDecorationColor: 'underline',
+    },
+  });
