@@ -7,3 +7,5 @@
 
 `realizar compoenentes reutlizables atomic design -> moleculas(conjunto de atomos) -> organismos -> plantillas -> pagina`
 - no deben manejar logica de negocios
+- no se suele usar componentes nativos
+ `buttons` : 
