@@ -1,12 +1,13 @@
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
+import TextComponent from "../components/TextComponent";
 
 const WelcomeScreen = () => {
   return (
     <SafeAreaView style = {styles.container}>
-      <Text style = {styles.text}>
+      <TextComponent size="12" weight="bold" color="muted">
         Welcome to my app!
-      <Text style = {styles.textoNegrita} > Welcome to my app!</Text>
-      </Text>
+      <TextComponent> Welcome to my app!</TextComponent>
+      </TextComponent>
     </SafeAreaView>
   );
 }
