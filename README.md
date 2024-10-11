@@ -5,4 +5,5 @@
 - para hacer funciones de clic, se puede hacer con onPress
 - se deberia heredar del compoente padre cualuquier estilo
 
-`realizar compoenentes reutlizables atomic design `
+`realizar compoenentes reutlizables atomic design -> moleculas(conjunto de atomos) -> organismos -> plantillas -> pagina`
+- no deben manejar logica de negocios
