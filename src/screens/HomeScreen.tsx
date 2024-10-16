@@ -88,4 +88,43 @@ const HomeScreen = () => {
 
 export default HomeScreen
 
-)
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    backgroundColor: colors.white,
+  },
+  categoriesContainer: {
+    gap: 10,
+  },
+  categoriesContent: {
+    // flexDirection: 'row',
+    // justifyContent:'space-around',
+    paddingHorizontal: 20,
+    gap: 20,
+  },
+  // card movie
+  containerCard: {
+    width: '50%',
+    gap: 10,
+  },
+  cardImage: {
+    // width: '50%',
+    minHeight: 220,
+    // resizeMode: 'stretch',
+    borderRadius: 5,
+    backgroundColor: 'red',
+  },
+  cardDetails: {
+    flexDirection: 'row',
+    justifyContent:'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    position: 'absolute',
+    bottom: 0,
+    backgroundColor: colors.black_a40,
+    borderRadius: 5,
+    paddingVertical: 5,
+  },
+})
