@@ -23,7 +23,7 @@ const AppNavigation = () => {
         screenOptions={{
           headerShown: false,
         }}
-      >
+      >q
         <Stack.Screen
           name="BottomTabsNavigation"
           component={BottomTabsNavigation}
