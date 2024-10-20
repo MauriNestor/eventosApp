@@ -35,6 +35,7 @@ const TextComponent = (props: Props) => {
         props.color === 'dark' && styles.darkColor,
         props.color === 'muted' && styles.mutedColor,
         props.color === 'white' && styles.whiteColor,
+        props.customColor && { color: props.color },
         props.textAlign === 'left' && styles.left,
         props.textAlign === 'center' && styles.center,
         props.textAlign === 'right' && styles.right,
