@@ -1,14 +1,14 @@
-// import { StyleSheet, Text, View } from 'react-native'
+import { useNavigation } from '@react-navigation/native';
+import { StyleSheet, Text, View } from 'react-native'
+import ButtonComponent from '../components/buttonComponent';
+import { useEffect } from 'react';
 // import React, { useEffect } from 'react'
 // // import { NavigationProp, RouteProp, useNavigation, useRoute } from '@react-navigation/native'
 // import ButtonComponent from '@app/components/molecules/ButtonComponent'
 // // import ButtonComponent from '../components/ButtonComponent'
 // // import { RootNavigationParamList } from '../navigation/AppNavigation'
 
-// type Props = {
-//   navigation: NavigationProp<any>,
-//   route: RouteProp<any, 'EventDetailScreen'>,
-// }
+
 
 // const EventDetailScreen = (props: Props) => {
 
@@ -25,16 +25,6 @@
 //     props.navigation.navigate('WelcomeScreen');
 //   }
 
-//   useEffect(() => {
-//     // podemos modificar ciertas opciones de la vista en cuestion como:
-//     // - poner el 'header title' con un nombre en particular
-//     // - asignar un nuevo componente al header[left-right]
-//     // - cambiar estilos del header
-//     // - ocultar el header, etc...
-//     props.navigation.setOptions({
-//       title: 'Este en mi custom title',
-//     })
-//   }, [])
   
 //   return (
 //     <View>
@@ -48,6 +38,37 @@
 //   )
 // }
 
-// export default EventDetailScreen
+// type Props = {
+//   navigation: NavigationProp<any>,
+//   route: RouteProp<any, 'EventDetailScreen'>,
+// }
 
-// const styles = StyleSheet.create({})
+const EventDetailScreen = () => {
+    const navegation = useNavigation()
+
+    const handleOnPressButton = () => {
+        navegation.navigate(`EventDetailScreen`)
+    }
+    useEffect(() => {
+    // podemos modificar ciertas opciones de la vista en cuestion como:
+    // - poner el 'header title' con un nombre en particular
+    // - asignar un nuevo componente al header[left-right]
+    // - cambiar estilos del header
+    // - ocultar el header, etc...
+     navegation.setOptions({
+      title: 'Este en mi custom title',
+    })
+  }, [])
+
+    
+    return (
+        <View>
+        <Text>EventDetailScreen</Text>
+        <ButtonComponent title='Ir al atras!' onPress={handleOnPressButton} />
+        </View>
+    )
+}
+
+export default EventDetailScreen
+
+const styles = StyleSheet.create({})
