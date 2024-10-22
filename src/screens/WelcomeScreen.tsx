@@ -3,12 +3,11 @@ import {Button, SafeAreaView, StyleSheet, Text} from 'react-native'
 
 
 import TextComponent from '../components/TextComponent';
+import ButtonComponent from '../components/buttonComponent';
 // import TextInputComponent from '../components/atoms/TextInputComponent';
 // import { useState } from 'react';
 
-// type Props = {
-//   navigation: NavigationProp<any>,
-// }
+
 
 // const WelcomeScreen = ({ navigation }: Props) => {
 //   const [input, setInput] = useState<string>('')
@@ -68,12 +67,19 @@ import TextComponent from '../components/TextComponent';
 // }
 
 
+type Props = {
+ navegation: NavegationProp<RootNavegationParamList>
+}
 
+const WelcomeScreen = ({ navigation }:any ) => {
 
-const WelcomeScreen = () => {
   const handleOnPress = () => {
     console.log('texto en negrita presionado')
   }
+  const handleOnPressButton = () => {
+    navigation.navigate('EventDetailScreen')
+}
+
   return (
     <SafeAreaView>
       <TextComponent size='18' weight='light' color='muted' textAlign='center'>
@@ -81,7 +87,7 @@ const WelcomeScreen = () => {
         <TextComponent size='24' weight='light' color='dark' onPress={handleOnPress} >texto negrita</TextComponent>
       </TextComponent>
 
-      <Button title='Ir al detalle del evento!' onPress={() => console.log('ir al detalle del evento')} />
+      <ButtonComponent title='Ir al detalle del evento!' onPress={handleOnPressButton} />
   
     </SafeAreaView>
   );
