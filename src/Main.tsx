@@ -1,10 +1,10 @@
 
 import React from "react";
-import WelcomeScreen from "./screens/WelcomeScreen";
+import AppNavigation from "./navegation/AppNavegation";
 
 const Main = () => {
   return (
-    <WelcomeScreen />
+    <AppNavigation />
   );
 }
 export default Main;
