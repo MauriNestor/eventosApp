@@ -7,7 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import WelcomeScreen from '../screens/WelcomeScreen';
 import EventDetailScreen from '../screens/EventDetailScreen';
 
-type RootNavegationParamList = {
+export type RootNavegationParamList = {
   WelcomeScreen: undefined,
   EventDetailScreen: undefined,
 }
