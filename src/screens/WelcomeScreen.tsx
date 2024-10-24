@@ -4,6 +4,8 @@ import {Button, SafeAreaView, StyleSheet, Text} from 'react-native'
 
 import TextComponent from '../components/TextComponent';
 import ButtonComponent from '../components/buttonComponent';
+import { RootNavegationParamList } from '../navegation/AppNavegation';
+import { NavigationProp } from '@react-navigation/native';
 // import TextInputComponent from '../components/atoms/TextInputComponent';
 // import { useState } from 'react';
 
@@ -68,10 +70,10 @@ import ButtonComponent from '../components/buttonComponent';
 
 
 type Props = {
- navegation: NavegationProp<RootNavegationParamList>
+ navigation: NavigationProp<RootNavegationParamList>
 }
 
-const WelcomeScreen = ({ navigation }:any ) => {
+const WelcomeScreen = ({ navigation }:Props ) => {
 
   const handleOnPress = () => {
     console.log('texto en negrita presionado')
