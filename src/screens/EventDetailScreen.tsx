@@ -1,7 +1,8 @@
-import { useNavigation } from '@react-navigation/native';
+import { NavigationProp, RouteProp, useNavigation } from '@react-navigation/native';
 import { StyleSheet, Text, View } from 'react-native'
 import ButtonComponent from '../components/buttonComponent';
 import { useEffect } from 'react';
+import { RootNavegationParamList } from '../navegation/AppNavegation';
 // import React, { useEffect } from 'react'
 // // import { NavigationProp, RouteProp, useNavigation, useRoute } from '@react-navigation/native'
 // import ButtonComponent from '@app/components/molecules/ButtonComponent'
@@ -38,16 +39,17 @@ import { useEffect } from 'react';
 //   )
 // }
 
-// type Props = {
-//   navigation: NavigationProp<any>,
-//   route: RouteProp<any, 'EventDetailScreen'>,
-// }
+type Props = {
+  navigation: NavigationProp<RootNavegationParamList>,
+  route: RouteProp<RootNavegationParamList, 'EventDetailScreen'>,
+}
 
-const EventDetailScreen = () => {
-    const navegation = useNavigation()
+const EventDetailScreen = (props: Props) => {
+    // const navigation = useNavigation()
+    // const { name, lastName, course } = props.route.params;
 
     const handleOnPressButton = () => {
-        navegation.navigate(`EventDetailScreen`)
+        props.navigation.navigate(`WelcomeScreen`);
     }
     useEffect(() => {
     // podemos modificar ciertas opciones de la vista en cuestion como:
@@ -55,7 +57,7 @@ const EventDetailScreen = () => {
     // - asignar un nuevo componente al header[left-right]
     // - cambiar estilos del header
     // - ocultar el header, etc...
-     navegation.setOptions({
+     props.navigation.setOptions({
       title: 'Este en mi custom title',
     })
   }, [])
