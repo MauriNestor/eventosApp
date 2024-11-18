@@ -1,60 +1,55 @@
-import { ActivityIndicator, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import {
+  ActivityIndicator,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import React, { useEffect, useState } from "react";
 
-import TextComponent from '../components/atoms/TextComponent'
+import TextComponent from "../components/TextComponent";
 
-import { colors } from '../theme/colors'
-import { categoriasEventos } from '../assets/data/categorias'
-import CategoryBtn from '../components/molecules/CategoryBtn'
-import { moviesData } from '../assets/data/movies'
-import { useAppDispatch, useAppSelector } from '../hooks/redux.hook'
-import { getCategoriesService } from '../store/slices/categories'
+import { colors } from "../theme/colors";
+import { categoriasEventos } from "../assets/data/categorias";
+import CategoryBtn from "../components/CategoryBtn";
+import { moviesData } from "../assets/data/movies";
 
 const HomeScreen = () => {
-  const [categoryActive, setCategoryActive] = useState<any>(categoriasEventos[0])
+  const [categoryActive, setCategoryActive] = useState<any>(
+    categoriasEventos[0]
+  );
 
-  const {category: categories, isLoading, selectedCategory} = useAppSelector(state => state.categories);
-  const dispatch = useAppDispatch();
-
-  console.log('store categories', categories)
-
-  useEffect(() => {
-    dispatch(getCategoriesService())
-  }, [])
-  
   return (
     <ScrollView style={styles.container}>
       <View style={styles.categoriesContainer}>
-        <TextComponent weight='semibold' size='18'>Categorias</TextComponent>
+        <TextComponent weight="semibold" size="18">
+          Categorias
+        </TextComponent>
         <ScrollView
           horizontal={true}
           contentContainerStyle={styles.categoriesContent}
           showsHorizontalScrollIndicator={false}
         >
-          {isLoading ? (
-            <ActivityIndicator color={colors.primary} size={50} />
-          ) : (
-            <>
-              {categoriasEventos.map(category => (
-                <CategoryBtn
-                  key={category.id}
-                  color={category.color}
-                  icon={category.icon}
-                  name={category.name}
-                  isActive={(category.id === categoryActive.id) || false}
-                  onPress={() => {
-                    setCategoryActive(category)
-                  }}
-                />
-              ))}
-            </>
-          )
-        }
+          {categoriasEventos.map((category) => (
+            <CategoryBtn
+              key={category.id}
+              color={category.color}
+              icon={category.icon}
+              name={category.name}
+              isActive={category.id === categoryActive.id || false}
+              onPress={() => {
+                setCategoryActive(category);
+              }}
+            />
+          ))}
         </ScrollView>
       </View>
-
       <View style={styles.categoriesContainer}>
-        <TextComponent weight='semibold' size='18'>Peliculas</TextComponent>
+        <TextComponent weight="semibold" size="18">
+          Peliculas
+        </TextComponent>
         <ScrollView
           contentContainerStyle={styles.categoriesContent}
           showsHorizontalScrollIndicator={false}
@@ -62,37 +57,37 @@ const HomeScreen = () => {
           {moviesData.map((movie, index) => (
             <TouchableOpacity
               key={movie.id}
-              activeOpacity={0.7}
+              activeOpacity={0.5}
               style={styles.containerCard}
             >
-              <View>
+              <view>
                 <Image
-                  source={{uri: movie.poster}}
+                  source={{ uri: movie.poster }}
                   style={styles.cardImage}
-                  resizeMethod='resize'
+                  resizeMethod="resize"
                 />
-                <View style={styles.cardDetails}>
-                  <TextComponent color='white' weight='semibold' size='14'>{`${movie.rating}/10`}</TextComponent>
-                  <TextComponent color='white' weight='semibold' size='14'>{`${movie.voteCount} Votos`}</TextComponent>
-                </View>
-              </View>
+                <view style={styles.cardDetails}>
+                  <TextComponent>{"${movie.rating}/10"}</TextComponent>
+                  <TextComponent>{"${movie.voteCount} votos"}</TextComponent>
+                </view>
+              </view>
 
-              <TextComponent weight='semibold' size='16'>{movie.title}</TextComponent>
+              <TextComponent>{movie.title}</TextComponent>
             </TouchableOpacity>
           ))}
         </ScrollView>
       </View>
     </ScrollView>
-  )
-}
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
+    display: "flex",
+    flexDirection: "column",
     backgroundColor: colors.white,
   },
   categoriesContainer: {
@@ -104,9 +99,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     gap: 20,
   },
-  // card movie
   containerCard: {
-    width: '50%',
+    width: "50%",
     gap: 10,
   },
   cardImage: {
@@ -114,17 +108,17 @@ const styles = StyleSheet.create({
     minHeight: 220,
     // resizeMode: 'stretch',
     borderRadius: 5,
-    backgroundColor: 'red',
+    backgroundColor: "red",
   },
   cardDetails: {
-    flexDirection: 'row',
-    justifyContent:'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: 20,
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
     backgroundColor: colors.black_a40,
     borderRadius: 5,
     paddingVertical: 5,
   },
-})
+});
