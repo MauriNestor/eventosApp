@@ -67,7 +67,9 @@ const HomeScreen = () => {
                   resizeMethod="resize"
                 />
                 <view style={styles.cardDetails}>
-                  <TextComponent>{"${movie.rating}/10"}</TextComponent>
+                  <TextComponent weight="semibold" size="14">
+                    {"${movie.rating}/10"}
+                  </TextComponent>
                   <TextComponent>{"${movie.voteCount} votos"}</TextComponent>
                 </view>
               </view>
