@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   },
   categoriesContent: {
     // flexDirection: 'row',
-    // justifyContent:'space-around',
+    // justifyContent:'space-around', error no se aplica
     paddingHorizontal: 20,
     gap: 20,
   },
