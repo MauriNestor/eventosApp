@@ -1,44 +1,69 @@
-import { Button, SafeAreaView, StyleSheet, Text } from "react-native";
-// import { NavigationProp } from '@react-navigation/native';
-
-import TextComponent from "../components/TextComponent";
-import ButtonComponent from "../components/buttonComponent";
-import { RootNavegationParamList } from "../navegation/AppNavegation";
+import { SafeAreaView, StyleSheet } from "react-native";
 import { NavigationProp } from "@react-navigation/native";
 
+import TextComponent from "../components//TextComponent"; // Ensure this path is correct and the file exists
+import TextInputComponent from "../components/atoms/TextInputComponent";
+import { useState } from "react";
+
 type Props = {
-  navigation: NavigationProp<RootNavegationParamList>;
+  navigation: NavigationProp<any>;
 };
 
 const WelcomeScreen = ({ navigation }: Props) => {
+  const [input, setInput] = useState<string>("");
+
   const handleOnPress = () => {
     console.log("texto en negrita presionado");
   };
+
   const handleOnPressButton = () => {
-    navigation.navigate("EventDetailScreen");
+    // navigation.navigate('EventDetailScreen')
+    // navigation.navigate('EventDetailScreen', {
+    //   name: 'abdiel',
+    //   lastName: "Orellana",
+    //   course: "Expo",
+    // })
   };
 
   return (
-    <SafeAreaView>
-      <TextComponent size="18" weight="light" color="muted" textAlign="center">
+    <SafeAreaView style={styles.container}>
+      <TextComponent size="24" weight="light" color="muted" textAlign="center">
         Welcome to the App!
         <TextComponent
           size="24"
-          weight="light"
-          color="dark"
+          weight="bold"
+          color="primary"
+          underline={true}
           onPress={handleOnPress}
         >
-          texto negrita
+          Texto en negrita
         </TextComponent>
       </TextComponent>
 
-      <ButtonComponent
-        title="Ir al detalle del evento!"
-        onPress={handleOnPressButton}
+      <TextComponent
+        size="24"
+        weight="bold"
+        color="dark"
+        // underline={true}
+        // onPress={handleOnPress}
+      >
+        {`Input value ${input}`}
+      </TextComponent>
+
+      <TextInputComponent
+        placeholder="Ingrese Texto"
+        value={input}
+        onChangeText={(text) => setInput(text)}
       />
+      {/* <ButtonComponent
+        title='Ir al detalle del evento!'
+        disabled={false}
+        onPress={handleOnPressButton}
+      /> */}
     </SafeAreaView>
   );
 };
+
 export default WelcomeScreen;
 
 const styles = StyleSheet.create({
@@ -48,9 +73,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  // TODO: estos estilos de texto ya no son requeridos, se eliminaran proximanente
   text: {
     fontSize: 24,
-    fontWeight: "600",
+    fontWeight: "400",
   },
   textoNegrita: {
     fontSize: 24,
