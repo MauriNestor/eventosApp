@@ -9,11 +9,11 @@ import {
 } from "react-native";
 import React, { useEffect, useState } from "react";
 
-import TextComponent from "../components/TextComponent";
+import TextComponent from "../components/atoms/TextComponent";
 
 import { colors } from "../theme/colors";
 import { categoriasEventos } from "../assets/data/categorias";
-import CategoryBtn from "../components/CategoryBtn";
+import CategoryBtn from "../components/molecules/CategoryBtn";
 import { moviesData } from "../assets/data/movies";
 
 const HomeScreen = () => {

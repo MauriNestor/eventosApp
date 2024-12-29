@@ -1,15 +1,17 @@
-import { NavigationProp, RouteProp, useNavigation } from '@react-navigation/native';
-import { StyleSheet, Text, View } from 'react-native'
-import ButtonComponent from '../components/buttonComponent';
-import { useEffect } from 'react';
-import { RootNavegationParamList } from '../navegation/AppNavegation';
+import {
+  NavigationProp,
+  RouteProp,
+  useNavigation,
+} from "@react-navigation/native";
+import { StyleSheet, Text, View } from "react-native";
+import ButtonComponent from "../components/molecules/buttonComponent";
+import { useEffect } from "react";
+import { RootNavegationParamList } from "../navegation/AppNavegation";
 // import React, { useEffect } from 'react'
 // // import { NavigationProp, RouteProp, useNavigation, useRoute } from '@react-navigation/native'
 // import ButtonComponent from '@app/components/molecules/ButtonComponent'
 // // import ButtonComponent from '../components/ButtonComponent'
 // // import { RootNavigationParamList } from '../navigation/AppNavigation'
-
-
 
 // const EventDetailScreen = (props: Props) => {
 
@@ -26,7 +28,6 @@ import { RootNavegationParamList } from '../navegation/AppNavegation';
 //     props.navigation.navigate('WelcomeScreen');
 //   }
 
-  
 //   return (
 //     <View>
 //       <Text>EventDetailScreen</Text>
@@ -40,37 +41,36 @@ import { RootNavegationParamList } from '../navegation/AppNavegation';
 // }
 
 type Props = {
-  navigation: NavigationProp<RootNavegationParamList>,
-  route: RouteProp<RootNavegationParamList, 'EventDetailScreen'>,
-}
+  navigation: NavigationProp<RootNavegationParamList>;
+  route: RouteProp<RootNavegationParamList, "EventDetailScreen">;
+};
 
 const EventDetailScreen = (props: Props) => {
-    // const navigation = useNavigation()
-    // const { name, lastName, course } = props.route.params;
+  // const navigation = useNavigation()
+  // const { name, lastName, course } = props.route.params;
 
-    const handleOnPressButton = () => {
-        props.navigation.navigate(`WelcomeScreen`);
-    }
-    useEffect(() => {
+  const handleOnPressButton = () => {
+    props.navigation.navigate(`WelcomeScreen`);
+  };
+  useEffect(() => {
     // podemos modificar ciertas opciones de la vista en cuestion como:
     // - poner el 'header title' con un nombre en particular
     // - asignar un nuevo componente al header[left-right]
     // - cambiar estilos del header
     // - ocultar el header, etc...
-     props.navigation.setOptions({
-      title: 'Este en mi custom title',
-    })
-  }, [])
+    props.navigation.setOptions({
+      title: "Este en mi custom title",
+    });
+  }, []);
 
-    
-    return (
-        <View>
-        <Text>EventDetailScreen</Text>
-        <ButtonComponent title='Ir al atras!' onPress={handleOnPressButton} />
-        </View>
-    )
-}
+  return (
+    <View>
+      <Text>EventDetailScreen</Text>
+      <ButtonComponent title="Ir al atras!" onPress={handleOnPressButton} />
+    </View>
+  );
+};
 
-export default EventDetailScreen
+export default EventDetailScreen;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

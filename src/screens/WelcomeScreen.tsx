@@ -1,7 +1,7 @@
 import { SafeAreaView, StyleSheet } from "react-native";
 import { NavigationProp } from "@react-navigation/native";
 
-import TextComponent from "../components//TextComponent"; // Ensure this path is correct and the file exists
+import TextComponent from "../components/atoms/TextComponent";
 import TextInputComponent from "../components/atoms/TextInputComponent";
 import { useState } from "react";
 
