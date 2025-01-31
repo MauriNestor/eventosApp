@@ -7,14 +7,13 @@ import {
 } from "react-native";
 import React, { useEffect } from "react";
 
-import { useAppDispatch, useAppSelector } from "@app/hooks/redux.hook";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux.hook";
 import {
   categoryActions,
   getCategoriesService,
 } from "@app/store/slices/categories";
 
 import CategoryBtn from "@app/components/molecules/CategoryBtn";
-console.log(require.resolve("@app"));
 
 import { ICategory } from "@app/types";
 import { colors } from "@app/theme/colors";
