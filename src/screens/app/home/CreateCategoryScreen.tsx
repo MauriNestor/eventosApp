@@ -10,7 +10,7 @@ import { createCategoryService } from "@app/store/slices/categories";
 
 import ScreenView from "@app/components/molecules/ScreenView";
 import FiledBase from "@app/components/organisms/FiledBase";
-import ButtonComponent from "@app/components/molecules/buttonComponent";
+import ButtonComponent from "@app/components/molecules/ButtonComponent";
 import TextComponent from "@app/components/atoms/TextComponent";
 
 type Props = {
