@@ -1,7 +1,7 @@
 import { ActivityIndicator, ScrollView, StyleSheet } from "react-native";
 import React, { useEffect } from "react";
 
-import { useAppDispatch, useAppSelector } from "@app/hooks/redux.hook";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux.hook";
 import { eventActions } from "@app/store/slices/events/event.slice";
 import { getEventsService } from "@app/store/slices/events/events.service";
 
