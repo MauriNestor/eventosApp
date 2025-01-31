@@ -4,8 +4,7 @@ import { categoryActions } from "./category.slice";
 
 import { categoriasEventos } from "@app/assets/data/categorias";
 
-import { ICategory, ICreateCategory } from "../../../types";
-
+import { ICategory, ICreateCategory } from "@app/types";
 
 export const getCategoriesService = () => async (dispatch: Dispatch) => {
   try {
