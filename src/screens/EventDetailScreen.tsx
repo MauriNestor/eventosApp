@@ -4,7 +4,7 @@ import {
   useNavigation,
 } from "@react-navigation/native";
 import { StyleSheet, Text, View } from "react-native";
-import ButtonComponent from "../components/molecules/buttonComponent";
+import ButtonComponent from "../components/molecules/ButtonComponent";
 import { useEffect } from "react";
 import { RootNavegationParamList } from "../navegation/AppNavegation";
 // import React, { useEffect } from 'react'
